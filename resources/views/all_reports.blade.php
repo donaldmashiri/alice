@@ -118,7 +118,7 @@
                         </div>
 
                         <h4 class="font-weight-bolder">
-                            Total Amount Loaned: ${{ $totalAmount }}.00
+                            Total Amount Loaned: ${{ $totalAmount }}.000
                         </h4>
 
                     </div>

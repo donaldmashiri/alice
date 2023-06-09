@@ -38,7 +38,7 @@ class HomeController extends Controller
     public function records()
     {
         $loans = LoanApplication::with('user')->get();
-        $totalAmount = $loans->sum('amount');
+        $totalAmount = LoanApplication::where('status', 'approved')->sum('amount');
         return view('records', ['loans' => $loans, 'totalAmount' => $totalAmount]);
     }
 
@@ -54,7 +54,10 @@ class HomeController extends Controller
 
         $loans = LoanApplication::all();
 
-        $totalAmount = $loans->sum('amount');
+        $totalAmount = LoanApplication::where('status', 'approved')->sum('amount');
+//        $totalAmount = LoanApplication::where('status', '=', 'approved')->selectRaw('SUM(amount) as total')->first()->total;
+
+
 
 
         return view('all_reports', compact('approvedLoanCount', 'totalUsers', 'totalAmount', 'rejectedLoanCount', 'totalLoanCount'));

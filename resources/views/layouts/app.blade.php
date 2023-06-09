@@ -86,7 +86,7 @@
     </div>
 
     <div class="footer-wrap pd-20 mb-20 card-box">
-        CSUZ Online Discussion Forum <a href="#" target="_blank">Tawanda Nyafesa</a>
+        POSB AI AUTOMATION LOAN PROCESSING <a href="#" target="_blank">Alice Mukwasami</a>
     </div>
 
 
