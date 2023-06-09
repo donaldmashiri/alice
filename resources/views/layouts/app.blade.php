@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CSUZ Online Discussion Forum</title>
+    <title>POSB</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/style.css') }}">
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset('assets/src/plugins/jquery-steps/jquery.steps.css') }}">--}}
