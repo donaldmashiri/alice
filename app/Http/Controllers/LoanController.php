@@ -16,7 +16,6 @@ class LoanController extends Controller
     public function index()
     {
         $user = auth()->user();
-//        $approvedLoanCount = LoanApplication::
 
         return view('loans.index')->with('loans', LoanApplication::where('user_id', $user->id)->orderByDesc('id')->get());
 

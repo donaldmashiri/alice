@@ -75,6 +75,9 @@
                         <a href="{{ route('loans.index') }}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-command"></i></span><span class="pcoded-mtext">View Applications</span></a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('online.index') }}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-moon"></i></span><span class="pcoded-mtext">Online Payment</span></a>
+                    </li>
+                    <li class="nav-item">
                         <a href="/reports" class="nav-link "><span class="pcoded-micon"><i class="feather icon-film"></i></span><span class="pcoded-mtext">
                             Reports
                         </span></a>
