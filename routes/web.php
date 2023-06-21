@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/reports', [App\Http\Controllers\HomeController::class, 'reports'])->name('reports');
 Route::get('/records', [App\Http\Controllers\HomeController::class, 'records'])->name('records');
+Route::get('/notify', [App\Http\Controllers\HomeController::class, 'notify'])->name('notify');
 Route::get('/all_reports', [App\Http\Controllers\HomeController::class, 'all_reports'])->name('all_records');
 Route::get('/users', [App\Http\Controllers\HomeController::class, 'users'])->name('users');
 Route::resource('loans', \App\Http\Controllers\LoanController::class);

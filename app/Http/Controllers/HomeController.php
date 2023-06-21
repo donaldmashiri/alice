@@ -26,7 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         $users =  User::all();
-        return view('home');
+        return view('home')->with('loans', LoanApplication::all());
+    }
+
+    public function notify()
+    {
+        $user = auth()->user();
+        return view('notify')->with('loans', LoanApplication::all());
     }
 
 

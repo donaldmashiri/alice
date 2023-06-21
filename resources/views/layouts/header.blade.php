@@ -67,7 +67,6 @@
                         </span></a>
                     </li>
                 @else
-
                     <li class="nav-item">
                         <a href="{{ route('loans.create') }}" class="nav-link "><span class="pcoded-micon"><i class="feather icon-compass"></i></span><span class="pcoded-mtext">Application</span></a>
                     </li>
@@ -150,18 +149,22 @@
                                 <p class="m-b-0">NEW</p>
                             </li>
                             <li class="notification">
+                                @foreach($loans as $loan)
                                 <div class="media">
                                     <img class="img-radius" src="{{ asset('assets/images/user.png') }}" alt="Generic placeholder image">
                                     <div class="media-body">
-                                        <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
-                                        <p>New ticket Added</p>
+                                        <p><strong>  {{ $loan->user->name }}</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>
+                                            {{ $loan->created_at }}</span></p>
+                                        <p>{{ $loan->reason }}</p>
                                     </div>
                                 </div>
+                                    <hr>
+                                @endforeach
                             </li>
 
                         </ul>
                         <div class="noti-footer">
-                            <a href="#!">show all</a>
+                            <a href="/notify">show all</a>
                         </div>
                     </div>
                 </div>

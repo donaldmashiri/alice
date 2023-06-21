@@ -26,7 +26,9 @@ class LoanController extends Controller
      */
     public function create()
     {
-        return view('loans.create');
+        $user = auth()->user();
+
+        return view('loans.create')->with('loans', LoanApplication::where('user_id', $user->id)->orderByDesc('id')->get());
     }
 
     /**

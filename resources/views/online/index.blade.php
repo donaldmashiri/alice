@@ -50,7 +50,6 @@
                                                         <td>{{ $loan->created_at }}</td>
                                                         <td>
                                                             <a href='https://www.paynow.co.zw/Payment/Link/?q=c2VhcmNoPWRvbmFsZHRvbmRlbWFzaGlyaSU0MGdtYWlsLmNvbSZhbW91bnQ9MC4wMSZyZWZlcmVuY2U9UE9TQitMT0FOK1NZU1RFTSZsPTA%3d' target='_blank'><img src='https://www.paynow.co.zw/Content/Buttons/Medium_buttons/button_pay-now_medium.png' style='border:0' />Pay Loan</a>
-{{--                                                            <a target="_blank" href="https://www.paynow.co.zw/Payment/Link/?q=c2VhcmNoPWRvbmFsZHRvbmRlbWFzaGlyaSU0MGdtYWlsLmNvbSZhbW91bnQ9MC4wMSZyZWZlcmVuY2U9TG9hbitQYXltZW50Jmw9MA%3d%3d">Pay</a>--}}
                                                         </td>
                                                     </tr>
                                                 @endforeach

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('loan_applications', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->integer('user_id');
             $table->string('reason');
             $table->string('employment_status');
             $table->string('documents');
