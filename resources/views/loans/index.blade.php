@@ -26,11 +26,12 @@
                                             <table class="table table-striped table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th>ref#</th>
                                                     <th>Reason</th>
                                                     <th>Employment Status</th>
                                                     <th>Document</th>
                                                     <th>Amount</th>
+                                                    <th>Total Interest</th>
                                                     <th>Status</th>
                                                     <th>Date Applied</th>
                                                 </tr>
@@ -38,21 +39,31 @@
                                                 <tbody>
                                                 @foreach($loans as $loan)
                                                     <tr>
-                                                        <td>{{ $loan->id }}</td>
+                                                        <td>LA-00{{ $loan->id }}</td>
                                                         <td>{{ $loan->reason }}</td>
                                                         <td>{{ $loan->employment_status }}</td>
                                                         <td>{{ $loan->documents }}</td>
                                                         <td class="font-weight-bolder">${{ $loan->amount }}.00</td>
+                                                        <td>
+                                                            @php
+                                                                if ($loan->amount > 100) {
+                                                                    $interestRate = 0.20; // 20% interest rate
+                                                                } else {
+                                                                    $interestRate = 0.05; // 5% interest rate
+                                                                }
+
+                                                                $totalAmount = $loan->amount + ($loan->amount * $interestRate);
+                                                            @endphp
+                                                            ${{ $totalAmount }}
+                                                        </td>
+
                                                         <td class="font-weight-bolder">
                                                             @if($loan->status === "approved")
                                                                 <p class="text-success h5"> {{ $loan->status }}</p>
                                                             @else
                                                                 <p class="text-danger"> {{ $loan->status }}</p>
                                                             @endif
-
                                                         </td>
-
-
                                                         <td>{{ $loan->created_at }}</td>
                                                     </tr>
                                                 @endforeach

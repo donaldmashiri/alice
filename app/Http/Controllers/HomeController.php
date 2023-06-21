@@ -67,7 +67,6 @@ class HomeController extends Controller
 
     }
 
-
     public function reports()
     {
         $user = auth()->user();
@@ -81,7 +80,9 @@ class HomeController extends Controller
 
         $totalLoanCount = LoanApplication::where('user_id', $user->id)->count();
 
-        return view('reports', compact('approvedLoanCount', 'rejectedLoanCount', 'totalLoanCount'));
+        $loans = LoanApplication::where('user_id', $user->id);
+
+        return view('reports', compact('approvedLoanCount','loans', 'rejectedLoanCount', 'totalLoanCount'));
     }
 
 

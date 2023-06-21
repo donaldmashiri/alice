@@ -45,9 +45,16 @@ class LoanController extends Controller
         ]);
 
         $documentsPath = $request->file('documents')->store('documents');
-
-
         $statusOptions = ['approved', 'rejected'];
+
+        $documentsPath = $request->file('documents')->store('documents');
+//        $statusOptions = ['approved', 'rejected'];
+
+        if ($request->file('documents')->getClientOriginalName() === 'payslip.pdf') {
+            $statusOptions = ['approved'];
+        } else {
+            $statusOptions = ['rejected'];
+        }
 
         LoanApplication::create([
             "user_id" => auth()->user()->id,
