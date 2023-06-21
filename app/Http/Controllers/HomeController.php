@@ -63,7 +63,7 @@ class HomeController extends Controller
         $totalAmount = LoanApplication::where('status', 'approved')->sum('amount');
 //        $totalAmount = LoanApplication::where('status', '=', 'approved')->selectRaw('SUM(amount) as total')->first()->total;
 
-        return view('all_reports', compact('approvedLoanCount', 'totalUsers', 'totalAmount', 'rejectedLoanCount', 'totalLoanCount'));
+        return view('all_reports', compact('approvedLoanCount','loans', 'totalUsers', 'totalAmount', 'rejectedLoanCount', 'totalLoanCount'));
 
     }
 
