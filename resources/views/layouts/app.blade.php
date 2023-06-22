@@ -87,7 +87,7 @@
     </div>
 
     <div class="footer-wrap pd-20 mb-20 card-box">
-        POSB AI AUTOMATION LOAN PROCESSING <a href="#" target="_blank">Alice Mukwasami</a>
+        POSB AI AUTOMATION LOAN PROCESSING <a href="#" target="_blank">Alice Mukwasani</a>
     </div>
 
 

@@ -14,7 +14,13 @@ class OnlinePaymentController extends Controller
     {
         $user = auth()->user();
 
-        return view('online.index')->with('loans', LoanApplication::where('user_id', $user->id)->orderByDesc('id')->get());
+        $loans = LoanApplication::where('user_id', $user->id)
+            ->where('status', 'approved')
+            ->orderByDesc('id')
+            ->get();
+
+        return view('online.index', compact('loans'));
+
     }
 
     /**
